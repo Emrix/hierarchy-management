@@ -66,21 +66,44 @@ Holiday Inn Express-LA Downtown,Holiday Inn Express-LA Downtown,Downtown,Area,Ho
 Hampton Inn-San Jose,Hampton Inn-San Jose,Downtown,Area,Hotel Property
 Embassy Suites-SF-Downtown,Embassy Suites-SF-Downtown,Downtown,Area,Hotel Property`
 
+var itemDel = ",";
+
+//Go through each of the lines, and extract the hierarchy names
+//Set the hierarchy names as nodes
+//Start recursing through the nodes, each time looping through the list adding children nodes based on Parent ID (as well as the children's names, levels, and metadata)
+
+
+
 //var csv is the CSV file with headers
 function csvJSON(csv) {
-    var lines = csv.split("\n"); //Split the data into an array
-    var result = []; //Set up the resulting file
-    var headers = lines[0].split(","); //Get the header names
+    var lines = csv.split("\n"); //Split the data into an array of lines
+    var hierarchyStructure = []; //Set up the resulting file
+    var headers = lines[0].split(itemDel); //Get the header names
+    //headers[0] = Node ID;
+    //headers[1] = Node Name;
+    //headers[2] = Parent ID;
+    //headers[3] = Hierarchy Name;
+    //headers[4] = Level Name;
+    //headers[5]++ = Metadata (goals, permissions, etc);
+    var hsNames = [];
     for (var i = 1; i < lines.length; i++) { //Loop through each line appending the data along the way
-        var obj = {};
-        var currentline = lines[i].split(",");
-        for (var j = 0; j < headers.length; j++) {
-            obj[headers[j]] = currentline[j];
+        var currentline = lines[i].split(itemDel);
+        if (hsNames.indexOf(currentline[3]) === -1) { //If it's not currently in our array, then add it
+            hsNames.push(currentline[3]);
+            var obj = {};
+            obj.name = currentline[3];
+            obj.children = [];
+            hierarchyStructure.push(obj);
         }
-        result.push(obj);
     }
+
+    hierarchyStructure = buildHierarchy(data,hierarchyStructure,0);
+
+    console.log(hierarchyStructure);
     //return result; //JavaScript object
-    return JSON.stringify(result); //JSON
+    return JSON.stringify(hsNames); //JSON
 }
 
-csvJSON(data);
+data = csvJSON(data);
+
+console.log(data);
