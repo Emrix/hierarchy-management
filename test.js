@@ -1,4 +1,5 @@
 var data = `Node ID,Node Name,Parent ID,Hierarchy Name,Level Name
+Brand,Brand,0,Brand,Brand Family
 Marriott,Marriott,,Brand,Brand Family
 Holiday Inn,Holiday Inn,,Brand,Brand Family
 Hilton,Hilton,,Brand,Brand Family
@@ -23,7 +24,8 @@ Hampton Inn-LAX,Hampton Inn-LAX,Hampton,Brand,Hotel Property
 Hampton Inn-San Jose,Hampton Inn-San Jose,Hampton,Brand,Hotel Property
 Embassy Suites-SFO,Embassy Suites-SFO,Embassy Suites,Brand,Hotel Property
 Embassy Suites-SF-Downtown,Embassy Suites-SF-Downtown,Embassy Suites,Brand,Hotel Property
-West,West,,Region,Region Name
+`
+/*`West,West,,Region,Region Name
 Southeast,Southeast,,Region,Region Name
 Northeast,Northeast,,Region,Region Name
 South Central,South Central,,Region,Region Name
@@ -64,7 +66,7 @@ Fairfield-Hou-Downtown,Fairfield-Hou-Downtown,Downtown,Area,Hotel Property
 Courtyard-Manhatttan,Courtyard-Manhatttan,Downtown,Area,Hotel Property
 Holiday Inn Express-LA Downtown,Holiday Inn Express-LA Downtown,Downtown,Area,Hotel Property
 Hampton Inn-San Jose,Hampton Inn-San Jose,Downtown,Area,Hotel Property
-Embassy Suites-SF-Downtown,Embassy Suites-SF-Downtown,Downtown,Area,Hotel Property`
+Embassy Suites-SF-Downtown,Embassy Suites-SF-Downtown,Downtown,Area,Hotel Property`*/
 
 var itemDel = ",";
 
@@ -72,38 +74,83 @@ var itemDel = ",";
 //Set the hierarchy names as nodes
 //Start recursing through the nodes, each time looping through the list adding children nodes based on Parent ID (as well as the children's names, levels, and metadata)
 
-
-
-//var csv is the CSV file with headers
-function csvJSON(csv) {
+function getHeaders(csv) {
     var lines = csv.split("\n"); //Split the data into an array of lines
-    var hierarchyStructure = []; //Set up the resulting file
     var headers = lines[0].split(itemDel); //Get the header names
-    //headers[0] = Node ID;
-    //headers[1] = Node Name;
-    //headers[2] = Parent ID;
-    //headers[3] = Hierarchy Name;
-    //headers[4] = Level Name;
-    //headers[5]++ = Metadata (goals, permissions, etc);
-    var hsNames = [];
-    for (var i = 1; i < lines.length; i++) { //Loop through each line appending the data along the way
-        var currentline = lines[i].split(itemDel);
-        if (hsNames.indexOf(currentline[3]) === -1) { //If it's not currently in our array, then add it
-            hsNames.push(currentline[3]);
-            var obj = {};
-            obj.name = currentline[3];
-            obj.children = [];
-            hierarchyStructure.push(obj);
+    var metaColumn = 0;
+    for (var j = 0; j < headers.length; j++) { //Go through each of the columns, and assign parseable header names
+        switch (headers[j]) {
+            case "Node ID":
+                headers[j] = "id";
+                break;
+            case "Node Name":
+                headers[j] = "name";
+                break;
+            case "Parent ID":
+                headers[j] = "parentId";
+                break;
+            case "Hierarchy Name":
+                headers[j] = "hierarchy";
+                break;
+            case "Level Name":
+                headers[j] = "level";
+                break;
+            default:
+                headers[j] = ("meta" + metaColumn);
+                metaColumn += 1;
+                break;
         }
     }
-
-    hierarchyStructure = buildHierarchy(data,hierarchyStructure,0);
-
-    console.log(hierarchyStructure);
-    //return result; //JavaScript object
-    return JSON.stringify(hsNames); //JSON
+    return headers;
 }
 
-data = csvJSON(data);
+function csvJSON(csv) {
+    var lines = csv.split("\n");
+    var result = [];
+    var headers = getHeaders(csv);
+    for (var i = 1; i < lines.length; i++) {
+        var obj = {};
+        if (lines[i]) {
+            var currentline = lines[i].split(",");
+            for (var j = 0; j < headers.length; j++) {
+                obj[headers[j]] = currentline[j];
+            }
+            if (!obj.parentId) {
+                obj.parentId = obj.hierarchy;
+            }
+            result.push(obj);
+        }
+    }
+    //return result; //JavaScript object
+    return result; //JSON
+}
 
+function list_to_tree(list) {
+    var map = {},
+        node, roots = [],
+        i; //Initialize Vars
+    for (i = 0; i < list.length; i += 1) {
+        map[list[i].id] = i; // initialize the map
+        list[i].children = []; // initialize the children
+    }
+    for (i = 0; i < list.length; i += 1) {
+        node = list[i];
+        if (node.parentId !== "0") {
+            // if you have dangling branches check that map[node.parentId] exists
+            console.log(node.id);
+            console.log(node.parentId);
+            console.log(map[node.parentId]);
+            list[map[node.parentId]].children.push(node);
+        } else {
+            roots.push(node);
+        }
+    }
+    return roots;
+}
+
+headers = getHeaders(data);
+console.log(headers);
+data = csvJSON(data);
+console.log(data);
+data = list_to_tree(data);
 console.log(data);

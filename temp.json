@@ -1,0 +1,479 @@
+{
+    "Node ID": "Marriott",
+    "Node Name": "Marriott",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Brand Family",
+    "children": [{
+
+    }]
+}
+
+//Establish the head nodes (hierarchy names)
+//Establish the children of the head nodes (no parent IDs)
+//recursively loop through each node finding it's children
+
+
+
+[
+{
+    "Node ID": "Marriott",
+    "Node Name": "Marriott",
+    "Parent ID": "",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Brand Family"
+},
+{
+    "Node ID": "Holiday Inn",
+    "Node Name": "Holiday Inn",
+    "Parent ID": "",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Brand Family"
+},
+{
+    "Node ID": "Hilton",
+    "Node Name": "Hilton",
+    "Parent ID": "",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Brand Family"
+},
+{
+    "Node ID": "Harriott Hotels & Resorts",
+    "Node Name": "Marriott Hotels & Resorts",
+    "Parent ID": "Marriott",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Property Brand"
+},
+{
+    "Node ID": "Fairfield",
+    "Node Name": "Fairfield",
+    "Parent ID": "Marriott",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Property Brand"
+},
+{
+    "Node ID": "Courtyard",
+    "Node Name": "Courtyard",
+    "Parent ID": "Marriott",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Property Brand"
+},
+{
+    "Node ID": "Holiday Inn Express",
+    "Node Name": "Holiday Inn Express",
+    "Parent ID": "Holiday Inn",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Property Brand"
+},
+{
+    "Node ID": "Holiday Inn Suites",
+    "Node Name": "Holiday Inn Suites",
+    "Parent ID": "Holiday Inn",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Property Brand"
+},
+{
+    "Node ID": "Hilton Gardens",
+    "Node Name": "Hilton Gardens",
+    "Parent ID": "Hilton",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Property Brand"
+},
+{
+    "Node ID": "Hampton",
+    "Node Name": "Hampton",
+    "Parent ID": "Hilton",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Property Brand"
+},
+{
+    "Node ID": "Embassy Suites",
+    "Node Name": "Embassy Suites",
+    "Parent ID": "Hilton",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Property Brand"
+},
+{
+    "Node ID": "Marriott Hotels & Resorts-IAH",
+    "Node Name": "Marriott Hotels & Resorts-IAH",
+    "Parent ID": "Harriott Hotels & Resorts",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Fairfield-JFK",
+    "Node Name": "Fairfield-JFK",
+    "Parent ID": "Fairfield",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Fairfield-Hou-Downtown",
+    "Node Name": "Fairfield-Hou-Downtown",
+    "Parent ID": "Fairfield",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Courtyard-Manhatttan",
+    "Node Name": "Courtyard-Manhatttan",
+    "Parent ID": "Courtyard",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Express-LA Downtown",
+    "Node Name": "Holiday Inn Express-LA Downtown",
+    "Parent ID": "Holiday Inn Express",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Express-Marietta",
+    "Node Name": "Holiday Inn Express-Marietta",
+    "Parent ID": "Holiday Inn Express",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Suites-LAX",
+    "Node Name": "Holiday Inn Suites-LAX",
+    "Parent ID": "Holiday Inn Suites",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Suites-ATL",
+    "Node Name": "Holiday Inn Suites-ATL",
+    "Parent ID": "Holiday Inn Suites",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Hilton Gardens-Sugar Land",
+    "Node Name": "Hilton Gardens-Sugar Land",
+    "Parent ID": "Hilton Gardens",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Hampton Inn-LAX",
+    "Node Name": "Hampton Inn-LAX",
+    "Parent ID": "Hampton",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Hampton Inn-San Jose",
+    "Node Name": "Hampton Inn-San Jose",
+    "Parent ID": "Hampton",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Embassy Suites-SFO",
+    "Node Name": "Embassy Suites-SFO",
+    "Parent ID": "Embassy Suites",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Embassy Suites-SF-Downtown",
+    "Node Name": "Embassy Suites-SF-Downtown",
+    "Parent ID": "Embassy Suites",
+    "Hierarchy Name": "Brand",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "West",
+    "Node Name": "West",
+    "Parent ID": "",
+    "Hierarchy Name": "Region",
+    "Level Name": "Region Name"
+},
+{
+    "Node ID": "Southeast",
+    "Node Name": "Southeast",
+    "Parent ID": "",
+    "Hierarchy Name": "Region",
+    "Level Name": "Region Name"
+},
+{
+    "Node ID": "Northeast",
+    "Node Name": "Northeast",
+    "Parent ID": "",
+    "Hierarchy Name": "Region",
+    "Level Name": "Region Name"
+},
+{
+    "Node ID": "South Central",
+    "Node Name": "South Central",
+    "Parent ID": "",
+    "Hierarchy Name": "Region",
+    "Level Name": "Region Name"
+},
+{
+    "Node ID": "California",
+    "Node Name": "California",
+    "Parent ID": "West",
+    "Hierarchy Name": "Region",
+    "Level Name": "State"
+},
+{
+    "Node ID": "Georgia",
+    "Node Name": "Georgia",
+    "Parent ID": "Southeast",
+    "Hierarchy Name": "Region",
+    "Level Name": "State"
+},
+{
+    "Node ID": "New York",
+    "Node Name": "New York",
+    "Parent ID": "Northeast",
+    "Hierarchy Name": "Region",
+    "Level Name": "State"
+},
+{
+    "Node ID": "Texas",
+    "Node Name": "Texas",
+    "Parent ID": "South Central",
+    "Hierarchy Name": "Region",
+    "Level Name": "State"
+},
+{
+    "Node ID": "Los Angeles",
+    "Node Name": "Los Angeles",
+    "Parent ID": "California",
+    "Hierarchy Name": "Region",
+    "Level Name": "City"
+},
+{
+    "Node ID": "San Francisco",
+    "Node Name": "San Francisco",
+    "Parent ID": "California",
+    "Hierarchy Name": "Region",
+    "Level Name": "City"
+},
+{
+    "Node ID": "Atlanta",
+    "Node Name": "Atlanta",
+    "Parent ID": "Georgia",
+    "Hierarchy Name": "Region",
+    "Level Name": "City"
+},
+{
+    "Node ID": "New York City",
+    "Node Name": "New York City",
+    "Parent ID": "New York",
+    "Hierarchy Name": "Region",
+    "Level Name": "City"
+},
+{
+    "Node ID": "Houston",
+    "Node Name": "Houston",
+    "Parent ID": "Texas",
+    "Hierarchy Name": "Region",
+    "Level Name": "City"
+},
+{
+    "Node ID": "Holiday Inn Suites-LAX",
+    "Node Name": "Holiday Inn Suites-LAX",
+    "Parent ID": "Los Angeles",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Express-LA Downtown",
+    "Node Name": "Holiday Inn Express-LA Downtown",
+    "Parent ID": "Los Angeles",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Hampton Inn-LAX",
+    "Node Name": "Hampton Inn-LAX",
+    "Parent ID": "Los Angeles",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Hampton Inn-San Jose",
+    "Node Name": "Hampton Inn-San Jose",
+    "Parent ID": "San Francisco",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Embassy Suites-SF-Downtown",
+    "Node Name": "Embassy Suites-SF-Downtown",
+    "Parent ID": "San Francisco",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Embassy Suites-SFO",
+    "Node Name": "Embassy Suites-SFO",
+    "Parent ID": "San Francisco",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Suites-ATL",
+    "Node Name": "Holiday Inn Suites-ATL",
+    "Parent ID": "Atlanta",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Express-Marietta",
+    "Node Name": "Holiday Inn Express-Marietta",
+    "Parent ID": "Atlanta",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Fairfield-JFK",
+    "Node Name": "Fairfield-JFK",
+    "Parent ID": "New York City",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Courtyard-Manhatttan",
+    "Node Name": "Courtyard-Manhatttan",
+    "Parent ID": "New York City",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Marriott Hotels & Resorts-IAH",
+    "Node Name": "Marriott Hotels & Resorts-IAH",
+    "Parent ID": "Houston",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Fairfield-Hou-Downtown",
+    "Node Name": "Fairfield-Hou-Downtown",
+    "Parent ID": "Houston",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Hilton Gardens-Sugar Land",
+    "Node Name": "Hilton Gardens-Sugar Land",
+    "Parent ID": "Houston",
+    "Hierarchy Name": "Region",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Airport",
+    "Node Name": "Airport",
+    "Parent ID": "",
+    "Hierarchy Name": "Area",
+    "Level Name": "Area Name"
+},
+{
+    "Node ID": "Suburbs",
+    "Node Name": "Suburbs",
+    "Parent ID": "",
+    "Hierarchy Name": "Area",
+    "Level Name": "Area Name"
+},
+{
+    "Node ID": "Downtown",
+    "Node Name": "Downtown",
+    "Parent ID": "",
+    "Hierarchy Name": "Area",
+    "Level Name": "Area Name"
+},
+{
+    "Node ID": "Marriott Hotels & Resorts-IAH",
+    "Node Name": "Marriott Hotels & Resorts-IAH",
+    "Parent ID": "Airport",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Fairfield-JFK",
+    "Node Name": "Fairfield-JFK",
+    "Parent ID": "Airport",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Suites-LAX",
+    "Node Name": "Holiday Inn Suites-LAX",
+    "Parent ID": "Airport",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Suites-ATL",
+    "Node Name": "Holiday Inn Suites-ATL",
+    "Parent ID": "Airport",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Hampton Inn-LAX",
+    "Node Name": "Hampton Inn-LAX",
+    "Parent ID": "Airport",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Embassy Suites-SFO",
+    "Node Name": "Embassy Suites-SFO",
+    "Parent ID": "Airport",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Express-Marietta",
+    "Node Name": "Holiday Inn Express-Marietta",
+    "Parent ID": "Suburbs",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Hilton Gardens-Sugar Land",
+    "Node Name": "Hilton Gardens-Sugar Land",
+    "Parent ID": "Suburbs",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Fairfield-Hou-Downtown",
+    "Node Name": "Fairfield-Hou-Downtown",
+    "Parent ID": "Downtown",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Courtyard-Manhatttan",
+    "Node Name": "Courtyard-Manhatttan",
+    "Parent ID": "Downtown",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Holiday Inn Express-LA Downtown",
+    "Node Name": "Holiday Inn Express-LA Downtown",
+    "Parent ID": "Downtown",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Hampton Inn-San Jose",
+    "Node Name": "Hampton Inn-San Jose",
+    "Parent ID": "Downtown",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+},
+{
+    "Node ID": "Embassy Suites-SF-Downtown",
+    "Node Name": "Embassy Suites-SF-Downtown",
+    "Parent ID": "Downtown",
+    "Hierarchy Name": "Area",
+    "Level Name": "Hotel Property"
+}]
