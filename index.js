@@ -1,3 +1,12 @@
+for (i = 0; i < data.length; i += 1) {
+    var optionName = data[i].id
+    var z = document.createElement("option"); //Create the option
+    z.setAttribute("value", optionName); //set the value
+    var t = document.createTextNode(optionName);
+    z.appendChild(t);
+    document.getElementById("hierarchySelect").appendChild(z);
+}
+
 var margin = { top: 20, right: 120, bottom: 20, left: 120 },
     width = 960 - margin.right - margin.left,
     height = 800 - margin.top - margin.bottom;
@@ -18,7 +27,7 @@ var svg = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-flare = meh;
+flare = selectedTree;
 root = flare;
 root.x0 = height / 2;
 root.y0 = 0;
@@ -133,4 +142,21 @@ function click(d) {
         d._children = null;
     }
     update(d);
+}
+
+function setUpHierarchy() {
+    var x = document.getElementById("hierarchySelect").value;
+    var dataIndex = 0;
+    for (i = 0; i < data.length; i += 1) {
+        if (data[i].id === x) {
+            dataIndex = i;
+        }
+    }
+    selectedTree = data[dataIndex];
+    flare = selectedTree;
+    root = flare;
+    root.x0 = height / 2;
+    root.y0 = 0;
+    root.children.forEach(collapse);
+    update(root);
 }

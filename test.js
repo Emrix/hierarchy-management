@@ -1,5 +1,4 @@
 var data = `Node ID,Node Name,Parent ID,Hierarchy Name,Level Name
-Brand,Brand,0,Brand,Brand Family
 Marriott,Marriott,,Brand,Brand Family
 Holiday Inn,Holiday Inn,,Brand,Brand Family
 Hilton,Hilton,,Brand,Brand Family
@@ -24,8 +23,7 @@ Hampton Inn-LAX,Hampton Inn-LAX,Hampton,Brand,Hotel Property
 Hampton Inn-San Jose,Hampton Inn-San Jose,Hampton,Brand,Hotel Property
 Embassy Suites-SFO,Embassy Suites-SFO,Embassy Suites,Brand,Hotel Property
 Embassy Suites-SF-Downtown,Embassy Suites-SF-Downtown,Embassy Suites,Brand,Hotel Property
-`
-/*`West,West,,Region,Region Name
+West,West,,Region,Region Name
 Southeast,Southeast,,Region,Region Name
 Northeast,Northeast,,Region,Region Name
 South Central,South Central,,Region,Region Name
@@ -66,7 +64,8 @@ Fairfield-Hou-Downtown,Fairfield-Hou-Downtown,Downtown,Area,Hotel Property
 Courtyard-Manhatttan,Courtyard-Manhatttan,Downtown,Area,Hotel Property
 Holiday Inn Express-LA Downtown,Holiday Inn Express-LA Downtown,Downtown,Area,Hotel Property
 Hampton Inn-San Jose,Hampton Inn-San Jose,Downtown,Area,Hotel Property
-Embassy Suites-SF-Downtown,Embassy Suites-SF-Downtown,Downtown,Area,Hotel Property`*/
+Embassy Suites-SF-Downtown,Embassy Suites-SF-Downtown,Downtown,Area,Hotel Property
+`
 
 var itemDel = ",";
 
@@ -131,16 +130,31 @@ function list_to_tree(list) {
         i; //Initialize Vars
     for (i = 0; i < list.length; i += 1) {
         map[list[i].id] = i; // initialize the map
-        list[i].children = []; // initialize the children
+        //list[i].children = []; // initialize the children
     }
     for (i = 0; i < list.length; i += 1) {
         node = list[i];
         if (node.parentId !== "0") {
-            // if you have dangling branches check that map[node.parentId] exists
-            console.log(node.id);
-            console.log(node.parentId);
-            console.log(map[node.parentId]);
-            list[map[node.parentId]].children.push(node);
+            var parentIDMapValue = map[node.parentId]; //Get the value of the parent ID of the node from the map
+            if (!parentIDMapValue && parentIDMapValue != 0) { //This means that the parent doesn't exist in this list or map
+                //Create the node
+                var newNode = {
+                    "hierarchy": node.hierarchy,
+                    "id": node.parentId,
+                    "level": "Top",
+                    "name": node.parentId,
+                    "parentId": "0"
+                }
+                //create it in the map
+                map[node.parentId] = list.length;
+                parentIDMapValue = list.length;
+                //create it in the list
+                list.push(newNode);
+            }
+            if (!list[parentIDMapValue].children) {
+                list[parentIDMapValue].children = [];
+            }
+            list[parentIDMapValue].children.push(node); //Push the node into it's children
         } else {
             roots.push(node);
         }
@@ -153,4 +167,6 @@ console.log(headers);
 data = csvJSON(data);
 console.log(data);
 data = list_to_tree(data);
+//console.log(JSON.stringify(data));
 console.log(data);
+var selectedTree = data[0];
