@@ -163,10 +163,7 @@ function list_to_tree(list) {
 }
 
 headers = getHeaders(data);
-console.log(headers);
 data = csvJSON(data);
-console.log(data);
 data = list_to_tree(data);
 //console.log(JSON.stringify(data));
-console.log(data);
 var selectedTree = data[0];

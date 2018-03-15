@@ -8,11 +8,11 @@ for (i = 0; i < data.length; i += 1) {
 }
 
 var margin = { top: 20, right: 120, bottom: 20, left: 120 },
-    width = 960 - margin.right - margin.left,
-    height = 800 - margin.top - margin.bottom;
+    width = 800 - margin.right - margin.left, //***Adjust this one for the width of the thingy
+    height = 280 - margin.top - margin.bottom; //***Adjust this one for the height of the thingy
 
 var i = 0,
-    duration = 750,
+    duration = 750, //***Adjust this one for speed of transition
     root;
 
 var tree = d3.layout.tree()
@@ -52,7 +52,7 @@ function update(source) {
         links = tree.links(nodes);
 
     // Normalize for fixed-depth.
-    nodes.forEach(function(d) { d.y = d.depth * 180; });
+    nodes.forEach(function(d) { d.y = d.depth * 180; }); //***Adjust this one for horizontal spacing
 
     // Update the nodes…
     var node = svg.selectAll("g.node")
@@ -69,9 +69,11 @@ function update(source) {
         .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
     nodeEnter.append("text")
-        .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+        //.attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+        .attr("x", function(d) { return -10; })
         .attr("dy", ".35em")
-        .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+        //.attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+        .attr("text-anchor", function(d) { return "end"; })
         .text(function(d) { return d.name; })
         .style("fill-opacity", 1e-6);
 
@@ -82,7 +84,20 @@ function update(source) {
 
     nodeUpdate.select("circle")
         .attr("r", 4.5)
-        .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+        .style("fill", function(d) {
+            if (!d.children && !d._children) { //If it's a leaf node
+                return "#757e2c";
+            } else {
+                return d._children ? "lightsteelblue" : "#fff";
+            }
+        })
+        .style("stroke", function(d) {
+            if (!d.children && !d._children) { //If it's a leaf node
+                return "#757e2c";
+            } else {
+                return "#3883b2";
+            }
+        });
 
     nodeUpdate.select("text")
         .style("fill-opacity", 1);
@@ -134,14 +149,16 @@ function update(source) {
 
 // Toggle children on click.
 function click(d) {
-    if (d.children) {
-        d._children = d.children;
-        d.children = null;
-    } else {
-        d.children = d._children;
-        d._children = null;
+    if (d.parentId != 0) { //Makes it so you can't collapse the root node
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        } else {
+            d.children = d._children;
+            d._children = null;
+        }
+        update(d);
     }
-    update(d);
 }
 
 function setUpHierarchy() {
