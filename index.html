@@ -5,13 +5,23 @@
     <title>Hierarchy Management</title>
     <link rel="stylesheet" type="text/css" href="./index.css">
     <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="./test.js"></script>
 </head>
 
 <body>
-    <select id="hierarchySelect" onchange="setUpHierarchy()">
-
-    </select>
+    <span>
+        Hierarchy:
+    </span>
+    <form id="myform">
+        <p>
+            <input id="myfile" name="files[]" multiple="" type="file" />
+        </p>
+    </form>
+    <select id="hierarchySelect" onchange="setUpHierarchy()"></select>
+    <div style="background-color: #737f23; width: 20px; height: 20px;">
+    </div>
+    <div style="color: #737f23;">
+        Interaction Point
+    </div>
     <center>
         <div id="d3Hierarchy"></div>
     </center>

@@ -1,0 +1,25 @@
+Node ID,Node Name,Parent ID,Hierarchy Name,Level Name,Hierarchy Permissions,goals
+Marriott,Marriott,,Brand,Brand Family,admin,1500
+Holiday Inn,Holiday Inn,,Brand,Brand Family,admin,1500
+Hilton,Hilton,,Brand,Brand Family,admin,1500
+Harriott Hotels & Resorts,Marriott Hotels & Resorts,Marriott,Brand,Property Brand,analyst,500
+Fairfield,Fairfield,Marriott,Brand,Property Brand,analyst,500
+Courtyard,Courtyard,Marriott,Brand,Property Brand,analyst,500
+Holiday Inn Express,Holiday Inn Express,Holiday Inn,Brand,Property Brand,analyst,500
+Holiday Inn Suites,Holiday Inn Suites,Holiday Inn,Brand,Property Brand,analyst,500
+Hilton Gardens,Hilton Gardens,Hilton,Brand,Property Brand,analyst,500
+Hampton,Hampton,Hilton,Brand,Property Brand,analyst,500
+Embassy Suites,Embassy Suites,Hilton,Brand,Property Brand,analyst,500
+Marriott Hotels & Resorts-IAH,Marriott Hotels & Resorts-IAH,Harriott Hotels & Resorts,Brand,Hotel Property,reader,100
+Fairfield-JFK,Fairfield-JFK,Fairfield,Brand,Hotel Property,reader,100
+Fairfield-Hou-Downtown,Fairfield-Hou-Downtown,Fairfield,Brand,Hotel Property,reader,100
+Courtyard-Manhatttan,Courtyard-Manhatttan,Courtyard,Brand,Hotel Property,reader,100
+Holiday Inn Express-LA Downtown,Holiday Inn Express-LA Downtown,Holiday Inn Express,Brand,Hotel Property,reader,100
+Holiday Inn Express-Marietta,Holiday Inn Express-Marietta,Holiday Inn Express,Brand,Hotel Property,reader,100
+Holiday Inn Suites-LAX,Holiday Inn Suites-LAX,Holiday Inn Suites,Brand,Hotel Property,reader,100
+Holiday Inn Suites-ATL,Holiday Inn Suites-ATL,Holiday Inn Suites,Brand,Hotel Property,reader,100
+Hilton Gardens-Sugar Land,Hilton Gardens-Sugar Land,Hilton Gardens,Brand,Hotel Property,reader,100
+Hampton Inn-LAX,Hampton Inn-LAX,Hampton,Brand,Hotel Property,reader,100
+Hampton Inn-San Jose,Hampton Inn-San Jose,Hampton,Brand,Hotel Property,reader,100
+Embassy Suites-SFO,Embassy Suites-SFO,Embassy Suites,Brand,Hotel Property,reader,100
+Embassy Suites-SF-Downtown,Embassy Suites-SF-Downtown,Embassy Suites,Brand,Hotel Property,reader,100

@@ -1,0 +1,26 @@
+Node ID,Node Name,Parent ID,Hierarchy Name,Level Name
+Marriott,Marriott,,Brand,Brand Family
+Holiday Inn,Holiday Inn,,Brand,Brand Family
+Hilton,Hilton,,Brand,Brand Family
+Harriott Hotels & Resorts,Marriott Hotels & Resorts,Marriott,Brand,Property Brand
+Fairfield,Fairfield,Marriott,Brand,Property Brand
+Fairfield,Fairfield,Hilton,Brand,Property Brand
+Courtyard,Courtyard,Marriott,Brand,Property Brand
+Holiday Inn Express,Holiday Inn Express,Holiday Inn,Brand,Property Brand
+Holiday Inn Suites,Holiday Inn Suites,Holiday Inn,Brand,Property Brand
+Hilton Gardens,Hilton Gardens,Hilton,Brand,Property Brand
+Hampton,Hampton,Hilton,Brand,Property Brand
+Embassy Suites,Embassy Suites,Hilton,Brand,Property Brand
+Marriott Hotels & Resorts-IAH,Marriott Hotels & Resorts-IAH,Harriott Hotels & Resorts,Brand,Hotel Property
+Fairfield-JFK,Fairfield-JFK,Fairfield,Brand,Hotel Property
+Fairfield-Hou-Downtown,Fairfield-Hou-Downtown,Fairfield,Brand,Hotel Property
+Courtyard-Manhatttan,Courtyard-Manhatttan,Courtyard,Brand,Hotel Property
+Holiday Inn Express-LA Downtown,Holiday Inn Express-LA Downtown,Holiday Inn Express,Brand,Hotel Property
+Holiday Inn Express-Marietta,Holiday Inn Express-Marietta,Holiday Inn Express,Brand,Hotel Property
+Holiday Inn Suites-LAX,Holiday Inn Suites-LAX,Holiday Inn Suites,Brand,Hotel Property
+Holiday Inn Suites-ATL,Holiday Inn Suites-ATL,Holiday Inn Suites,Brand,Hotel Property
+Hilton Gardens-Sugar Land,Hilton Gardens-Sugar Land,Hilton Gardens,Brand,Hotel Property
+Hampton Inn-LAX,Hampton Inn-LAX,Hampton,Brand,Hotel Property
+Hampton Inn-San Jose,Hampton Inn-San Jose,Hampton,Brand,Hotel Property
+Embassy Suites-SFO,Embassy Suites-SFO,Embassy Suites,Brand,Hotel Property
+Embassy Suites-SF-Downtown,Embassy Suites-SF-Downtown,Embassy Suites,Brand,Hotel Property
